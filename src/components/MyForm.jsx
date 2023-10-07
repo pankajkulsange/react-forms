@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 const MyForm = () => {
+  const [enteredFirstName, setEnteredFirstName] = useState("");
+  const [enteredLastName, setEnteredLastName] = useState("");
   function handleFirstName(e) {
     // console.log("FirstName changed");
-    console.log(e.target.name, e.target.value);
+    // console.log(e.target.name, e.target.value);
+    setEnteredFirstName(e.target.value);
   }
   function handleLastName(e) {
     // console.log("LastName changed");
-    console.log(e.target.name, e.target.value);
+    // console.log(e.target.name, e.target.value);
+    setEnteredLastName(e.target.value);
   }
   return (
     <>
@@ -31,6 +35,8 @@ const MyForm = () => {
         <br />
         <button>Submit</button>
       </form>
+      <p>{enteredFirstName}</p>
+      <p>{enteredLastName}</p>
     </>
   );
 };
