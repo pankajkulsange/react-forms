@@ -12,13 +12,19 @@ const MyForm = () => {
     // console.log("FirstName changed");
     // console.log(e.target.name, e.target.value);
     // setEnteredFirstName(e.target.value);
-    setData({ ...data, enteredFirstName: e.target.value });
+    // setData({ ...data, enteredFirstName: e.target.value });
+    setData((prevState) => {
+      return { ...prevState, enteredFirstName: e.target.value };
+    });
   }
   function handleLastName(e) {
     // console.log("LastName changed");
     // console.log(e.target.name, e.target.value);
     // setEnteredLastName(e.target.value);
-    setData({ ...data, enteredLastName: e.target.value });
+    // setData({ ...data, enteredLastName: e.target.value });
+    setData((prevState) => {
+      return { ...prevState, enteredLastName: e.target.value };
+    });
   }
   return (
     <>
