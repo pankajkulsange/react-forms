@@ -2,10 +2,12 @@ import React from "react";
 
 const MyForm = () => {
   function handleFirstName(e) {
-    console.log("FirstName changed");
+    // console.log("FirstName changed");
+    console.log(e.target.value);
   }
   function handleLastName(e) {
-    console.log("LastName changed");
+    // console.log("LastName changed");
+    console.log(e.target.value);
   }
   return (
     <>
