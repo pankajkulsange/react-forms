@@ -1,17 +1,24 @@
 import React, { useState } from "react";
 
 const MyForm = () => {
-  const [enteredFirstName, setEnteredFirstName] = useState("");
-  const [enteredLastName, setEnteredLastName] = useState("");
+  //   const [enteredFirstName, setEnteredFirstName] = useState("");
+  //   const [enteredLastName, setEnteredLastName] = useState("");
+  // NOTE: single state variable for mulitple inputs
+  const [data, setData] = useState({
+    enteredFirstName: "",
+    enteredLastName: "",
+  });
   function handleFirstName(e) {
     // console.log("FirstName changed");
     // console.log(e.target.name, e.target.value);
-    setEnteredFirstName(e.target.value);
+    // setEnteredFirstName(e.target.value);
+    setData({ ...data, enteredFirstName: e.target.value });
   }
   function handleLastName(e) {
     // console.log("LastName changed");
     // console.log(e.target.name, e.target.value);
-    setEnteredLastName(e.target.value);
+    // setEnteredLastName(e.target.value);
+    setData({ ...data, enteredLastName: e.target.value });
   }
   return (
     <>
@@ -35,8 +42,8 @@ const MyForm = () => {
         <br />
         <button>Submit</button>
       </form>
-      <p>{enteredFirstName}</p>
-      <p>{enteredLastName}</p>
+      <p>{data.enteredFirstName}</p>
+      <p>{data.enteredLastName}</p>
     </>
   );
 };
